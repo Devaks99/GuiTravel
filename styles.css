@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa pelo menos toda a altura da viewport */
+    margin: 0;
+}
+
+main {
+    flex: 1; /* Faz o main ocupar todo o espaço disponível */
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+.swiper-slide {
+    height: auto !important;
+}
+
+.map-container {
+    height: 400px;
+    z-index: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Garante que o conteúdo não fique escondido atrás do footer */
+.roteiro-container {
+    margin-bottom: 100px;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+footer {
+    background-color: #1e293b; /* bg-slate-800 */
+    color: #cbd5e1; /* text-slate-300 */
+    padding: 1.5rem 0;
+    position: fixed !important;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    footer {
+        padding: 1rem 0;
+    }
+    
+    main {
+        padding-bottom: 80px; /* Mais espaço para o footer em mobile */
+    }
+}
